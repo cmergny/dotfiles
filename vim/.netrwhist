@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/cyril/Documents/Work/PhD/heat-transfer'
+let g:netrw_dirhist_7='/home/cyril/Documents/Work/PhD/heat-transfer/figures'
+let g:netrw_dirhist_6='/home/cyril/Documents/Work/PhD/heat-transfer'
+let g:netrw_dirhist_5='/home/cyril'
+let g:netrw_dirhist_4='/home'
+let g:netrw_dirhist_3='/home/cyril'
+let g:netrw_dirhist_2='/home/cyril/.vim'
+let g:netrw_dirhist_1='/home/cyril/Pictures'
+let g:netrw_dirhist_0='/home/cyril'
+let g:netrw_dirhist_9='/home/cyril/Documents/Work/PhD/heat-transfer/figures'
