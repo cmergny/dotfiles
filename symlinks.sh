@@ -4,11 +4,15 @@ mkdir -p  ~/.config
 
 folders="alacritty compton dunst i3 polybar zathura"
 
-# ln -sfv ~/dotfiles/bashrc ~/.bashrc
-# ln -sfv ~/dotfiles/vim/ ~/.vim
+mv -f ~/.vim ~/.dotfiles_old/vim
+mv -f ~/.bashrc ~/.dotfiles_old/
+
+ln -s ~/dotfiles/bashrc ~/.bashrc
+ln -s ~/dotfiles/vim/ ~/.vim
 
 for folder in $folders; do
-	mv -vf ~/.config/$folder ~/.dotfiles_old/
+	mv -f ~/.config/$folder ~/.dotfiles_old/
 	# rm -rfv  ~/dotfiles/config/$folder/$folder
-	ln -sv ~/dotfiles/config/$folder ~/.config/$folder
+	echo "Symlinking $folder"
+	ln -s ~/dotfiles/config/$folder ~/.config/$folder
 done
