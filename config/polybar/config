@@ -49,18 +49,18 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 ; fonts - last digit is y
-font-0 = fixed:pixelsize=15;1
+font-0 = JetBrainsMono Nerd Font:pixelsize=13;1
 font-1 = FontAwesome5Free:style=Solid:size=10;1
 font-2 = FontAwesome5Free:style=Regular:size=10;1
 font-3 = FontAwesome5Brands:style=Regular:size=11;1
-font-4 = unifont:fontformat=truetype:size=9;1
+font-4 = unifont:fontformat=truetype:size=21;1
 font-5 = JetBrainsMono Nerd Font:style=Bold:pixelsize=15;1
 font-6 = JetBrainsMono Nerd Font:size=14;1
 font-7 = Material Design Icons:style=Bold:size=14;1
 ; modules layout
 modules-left = i3
 modules-center = xwindow
-modules-right = pulseaudio light cpu battery temperature redshift date wlan eth 
+modules-right = pulseaudio cpu battery temperature redshift date wlan eth 
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
@@ -144,7 +144,7 @@ ramp-signal-3 = 󰤨
 
 [module/eth]
 type = internal/network
-interface = enx00e04c680122 
+interface = eno1 
 interval = 3.0
 label-connected = 󰈀 
 format-disconnected = 

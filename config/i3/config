@@ -6,12 +6,13 @@ set $mod Mod4
 # Multi-monitor
 exec_always xrandr --output eDP-1 --primary --mode 1920x1200 --pos 1920x0 --rotate normal --output DP-1 --mode 1920x1080 --pos 0x0 --rotate normal 
 # Polybar
-exec_always --no-startup-id /home/cyril/.config/polybar/launch.sh 
+exec_always --no-startup-id ~/.config/polybar/launch.sh 
 # Compositor
 exec_always --no-startup-id  "pkill -9 compton ; compton"
 # Wallpaper
-exec_always feh --bg-fill ~/Pictures/wallpapers/hunter_wallpaper
+exec_always feh --bg-fill ~/Pictures/wolf.jpg
 # Capslock becomes enter
+exec_always setxkbmap fr
 exec setxkbmap -option caps:none
 exec_always xmodmap -e "keycode 66 = Return"
 # Start rofi

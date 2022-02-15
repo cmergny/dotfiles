@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -118,14 +118,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/cyril/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/cyril/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/cyril/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
     else
-        export PATH="/home/cyril/miniconda3/bin:$PATH"
+        export PATH="/usr/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -135,6 +135,7 @@ unset __conda_setup
 # Shortcut for POD analysis (LIMSI internship)
 export PATH=$PATH:/home/cyril/Documents/Work/PLR2/POD/PYTHON_PROJECTS_YF/PYTHON_SOFTWARES/
 export PYTHONPATH=$PYTHONPATH:/home/cyril/Documents/Work/PLR2/POD/PYTHON_PROJECTS_YF/PYTHON_LIBS/
+export PATH=~/Git/micmac/bin:$PATH
 
 # Reduce path size in prompt
 PROMPT_DIRTRIM=2
@@ -145,7 +146,3 @@ alias heatdir='cd ~/Documents/Work/PhD/heat-transfer'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias fightcade='/home/cyril/Games/Fightcade/Fightcade2.sh'
 
-# BEGIN_KITTY_SHELL_INTEGRATION
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
-# END_KITTY_SHELL_INTEGRATION
-. "$HOME/.cargo/env"
