@@ -1,19 +1,23 @@
+" Understand meaning of letters next to completion menu
+" Prevent pyright to import modules
+" Better snippets and completion
+" Open zathura pdf on the side
+" Mapping to exit terminal
+" Mapping for noh
+
 call plug#begin('~/.vim/plugged')
-	":FloatermNew fzf For file
-	"Plug 'preservim/nerdtree'
-	"Plug 'Xuyuanp/nerdtree-git-plugin'
-	"Plug 'ryanoasis/vim-devicons'
-	Plug 'itchyny/lightline.vim'
-	" Theme
+	" Theme and airline
 	Plug 'morhetz/gruvbox'
+	Plug 'arcticicestudio/nord-vim'
+	Plug 'itchyny/lightline.vim'
 	" For autocompletion
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 	"Snippets
-	Plug 'SirVer/ultisnips'
+	" Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 	"For using cocvim and snippets
-	Plug 'ervandew/supertab' 
+	" Plug 'ervandew/supertab' 
 	"Fuzzy Files Finder
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
@@ -23,9 +27,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Raimondi/delimitMate'
 	"To comment blocks
 	Plug 'tpope/vim-commentary'
+	"LateX completion
+	Plug 'lervag/vimtex'
+" Undo tree
+Plug 'mbbill/undotree'
 call plug#end()
 
-colorscheme gruvbox
+colorscheme nord
 let mapleader = " "
 nnoremap <SPACE> <Nop>
 set encoding=utf-8
@@ -39,16 +47,21 @@ set autoindent
 set incsearch
 set hlsearch
 set nocompatible 
-set background=dark
+" set background=dark
 set nowrap
 set noswapfile
-set nobackup
-set nowritebackup
+" set nobackup
+" set nowritebackup
 set undofile
 set undodir=~/.vim/undodir
 set laststatus=2
+" setlocal spell
+set spelllang=nl,en_gb
+inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " MAPPING
+" Split windows
+nmap <c-v> :vsplit <CR> <c-w>l
 " Change windows easely
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -59,20 +72,33 @@ vnoremap < <gv
 vnoremap > >gv
 " FZF config
 nmap <leader>ff :Files <CR>
+nmap <leader>fh :Files ~<CR>
 nmap <leader>fb :Buffers <CR>
-nmap <leader>tt :FloatermNew <CR>
-nmap <leader>tk :FloatermKill <CR>
+" Floaterm  config
+nmap <leader>tn :w <CR> :FloatermNew <CR>
+nmap <leader>tt :w <CR> :FloatermToggle <CR>
+tmap <leader>tn <c-\><c-n>:FloatermNew <CR>
+tmap <leader>tk  <c-\><c-n> :FloatermKill <CR>
+tmap <leader><Esc>  <c-\><c-n> :FloatermToggle <CR>
+tmap <c-h>  <c-\><c-n> :FloatermPrev <CR>
+tmap <c-l>  <c-\><c-n> :FloatermNext <CR>
+tmap <leader>tm <c-\><c-n> 
+tmap <c-k> <Up>
+tmap <c-j> <Down>
 " Open vimrc quickly
-nmap <leader>vv :e ~/.vim/vimrc <CR>  
+nmap <leader>ve :e ~/.vim/vimrc <CR>  
+nmap <leader>vv :b ~/.vim/vimrc <CR>  
 "Resize windows
 nmap <M-Right> :vertical resize +1<CR>
 nmap <M-Left> :vertical resize -1<CR>
 nmap <M-Down> :resize +1<CR>
 nmap <M-Up> :resize -1<CR>
 
+" Vim commentary for gdl
+autocmd FileType idlang setlocal commentstring=;\ %s
+
 "Hide tildes on blanck lines
 " highlight EndOfBuffer ctermfg=bg
-
 " Make vertical separator pretty
 highlight VertSplit cterm=NONE
 set fillchars+=vert:\▏
@@ -81,8 +107,31 @@ set fillchars+=vert:\▏
 let g:netrw_banner = 0
 let g:netrw_winsize = 20
 
+" Coc vim config
+let g:coc_global_extensions = ['coc-snippets', 'coc-json', 'coc-browser', 'coc-css', 'coc-eslint', 'coc-html', 'coc-sh', 'coc-pyright', 'coc-highlight']
+" let g:coc_snippet_next = '<tab>'
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 
-" Coc vim config
-let g:coc_global_extensions = ['coc-snippets', 'coc-json', 'coc-browser', 'coc-css', 'coc-eslint', 'coc-html', 'coc-sh', 'coc-pyright', 'coc-highlight']
+" Trigger configuration. 
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" VimTex config
+let maplocalleader = " "
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_open_on_warning = 0 "No erro window open for warnings
+let g:vimtex_view_method='zathura'
+
+" Lightline colorsheme
+let g:lightline = {'colorscheme': 'nord'}

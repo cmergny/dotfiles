@@ -1,5 +1,5 @@
 [global]
-font = Iosevka Term 11
+font = Iosevka 11
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -123,7 +123,7 @@ line_height = 3
 separator_height = 2
 
 # Padding between text and separator.
-padding = 6
+padding = 12
 
 # Horizontal padding.
 horizontal_padding = 6
@@ -181,17 +181,15 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#3B7C87"
-foreground = "#3B7C87"
-background = "#191311"
-#background = "#2B313C"
+frame_color = "#6497b1"
+foreground = "#7B7C87"
+background = "#011f4bj"
 timeout = 4
 
 [urgency_normal]
-frame_color = "#5B8234"
-foreground = "#5B8234"
-background = "#191311"
-#background = "#2B313C"
+frame_color = "#6497b1"
+foreground = "#b3cde0"
+background = "#011f4b"
 timeout = 6
 
 [urgency_critical]
