@@ -201,9 +201,9 @@ mode "resize" {
 
 ##~~~ Default Color Scheme (Everforest) 
 # class                 border  bground text    indicator child_border(this one)
-client.focused          #f44004 #6272A4 #F8F8F2 #6272A4   #787e97
+client.focused          #d8dee9 #4c566a #F8F8F2 #6272A4   #787e97
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.unfocused        #282A36 #2e3440 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
@@ -217,10 +217,11 @@ title_align center
 # Uncomment this to disable title bars
 for_window [class="^.*"] border pixel 5
 for_window [class="Polybar"] border pixel 0
-gaps inner 15
-gaps outer 10
+# gaps inner 15
+gaps outer 25
 # gaps bottom 25
-gaps top 65 # for polybar
+gaps bottom 25 # for polybar
+gaps top 80 # for polybar
 
 ##~~~ Rules For Workspaces
 assign [class="Firefox"] $ws3
@@ -228,10 +229,20 @@ assign [class="Thunderbird"] $ws4
 assign [class="discord"] $ws9
 assign [class="Org.gnome.Nautilus"] $ws5
 assign [class="Steam"] $ws8
+assign [class="steam"] $ws8
+assign [class="battle.net.exe"] $ws8
+assign [class="Lutris"] $ws8
+assign [class="Fightcade"] $ws8
+assign [class="hearthstone.exe"] $ws8
+assign [class="steam_app_383980"] $ws8
 
 # Rules for floating
 for_window [class="matplotlib"] floating enable
-for_window [class="Org.gnome.Nautilus"] floating enable 
-for_window [class="Org.gnome.Nautilus"] resize set 1000 700 
-for_window [class="Org.gnome.Nautilus"] move position center
+for_window [class="Org.gnome.Nautilus"] layout tabbed
+for_window [class="Lutris"] layout tabbed
+for_window [class="steam"] layout tabbed
+for_window [class="Fightcade"] layout tabbed
+# for_window [class="Org.gnome.Nautilus"] floating enable 
+# for_window [class="Org.gnome.Nautilus"] resize set 1000 700 
+# for_window [class="Org.gnome.Nautilus"] move position center
 

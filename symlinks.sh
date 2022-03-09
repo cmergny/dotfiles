@@ -4,9 +4,10 @@ mkdir -p  ~/.config
 
 folders="alacritty compton dunst i3 polybar zathura"
 
+# Save previous files in a backup dir
 mv -f ~/.vim ~/.dotfiles_old/vim
 mv -f ~/.bashrc ~/.dotfiles_old/
-
+# Create symlinks
 ln -s ~/dotfiles/bashrc ~/.bashrc
 ln -s ~/dotfiles/vim/ ~/.vim
 
