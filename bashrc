@@ -103,4 +103,5 @@ alias heatdir='cd ~/Documents/Work/PhD/heat-transfer'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias fightcade='/home/cyril/Games/Fightcade/Fightcade2.sh'
 alias vpnsaclay='sudo openconnect --protocol=gp -u cyril.mergny vpn.u-psud.fr'
+alias startssh='eval "$(ssh-agent)" && ssh-add ~/.ssh/gitlab_rsa'
 # . "$HOME/.cargo/env"
