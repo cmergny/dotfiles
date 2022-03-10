@@ -18,14 +18,16 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #20242c
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = #d8dee9
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+orange = #d08770
+red = #bf616a
 
 [bar/example]
 monitor = ${env:MONITOR:HDMI-1}
@@ -155,7 +157,7 @@ interval = 5
 time = " %H:%M"
 time-alt = " %d/%m/%Y"
 format-prefix = %{T7} %{T0}  
-format-prefix-foreground = #B9D7EB
+format-prefix-foreground = #88c0d0
 label = %time%
 
 [module/pulseaudio]
@@ -195,9 +197,9 @@ ramp-capacity-7 = %{T7}
 ramp-capacity-8 = %{T7}
 ; Full
 format-full-prefix = "󱟢 "
-format-full-foreground = #6aa84f 
+format-full-foreground = #a3be8c  
 label-full = Full
-format-full-underline = #6aa84f
+format-full-underline = #a3be8c
 
 [module/temperature]
 type = internal/temperature
@@ -208,13 +210,13 @@ warn-temperature = 80
 format = <ramp> <label>
 ; warn
 format-warn = <ramp> <label-warn>
-format-warn-underline = cc0000
+format-warn-underline = #bf616a
 label = %temperature-c%
 label-warn = %temperature-c%!
 ;ramp
 ramp-0 = 󰏈
-ramp-1 = %{F#e69138}󰏈%{F-}
-ramp-2 = %{F#cc0000}󰏈
+ramp-1 = %{F#d08770}󰏈%{F-}
+ramp-2 = %{F#bf616a}󰏈
 
 [module/light]
 type = custom/script

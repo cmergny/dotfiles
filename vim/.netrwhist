@@ -1,12 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
-let g:netrw_dirhist_0='/home/cmergny/dotfiles/config/alacritty'
-let g:netrw_dirhist_9='/etc'
-let g:netrw_dirhist_8='/home/cmergny/dotfiles/config/i3'
-let g:netrw_dirhist_7='/usr/lib/modprobe.d'
-let g:netrw_dirhist_6='/etc/modprobe.d'
-let g:netrw_dirhist_5='/usr/share/X11/xorg.conf.d'
-let g:netrw_dirhist_4='/etc/modprobe.d'
-let g:netrw_dirhist_3='/usr/lib/modprobe.d'
-let g:netrw_dirhist_2='/etc/X11/xorg.conf.d'
-let g:netrw_dirhist_1='/usr/share/X11/xorg.conf.d'
+
