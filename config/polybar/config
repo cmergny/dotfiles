@@ -49,12 +49,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 ; fonts - last digit is y
-font-0 = JetBrainsMono Nerd Font:pixelsize=13;1
+font-0 = XBF Misc Fixed 9x15:style=Book:size=12;1
 font-1 = FontAwesome5Free:style=Solid:size=10;1
 font-2 = FontAwesome5Free:style=Regular:size=10;1
 font-3 = FontAwesome5Brands:style=Regular:size=11;1
 font-4 = unifont:fontformat=truetype:size=21;1
-font-5 = JetBrainsMono Nerd Font:style=Bold:pixelsize=15;1
+font-5 = JetBrainsMono Nerd Font:style=Bold:pixelsize=14;1
 font-6 = JetBrainsMono Nerd Font:size=14;1
 font-7 = Material Design Icons:style=Bold:size=14;1
 ; modules layout
@@ -90,7 +90,7 @@ label-mode-background = ${colors.primary}
 ; Icons
 ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;󰈔
 ws-icon-5 = 6;WS
@@ -121,7 +121,7 @@ label-urgent-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 4
-format-prefix =" "
+format-prefix =%{T7} %{T0} 
 format =  <label>
 ; label-padding = 1
 ; format-background = #2a2e36
@@ -146,7 +146,7 @@ ramp-signal-3 = 󰤨
 type = internal/network
 interface = eno1 
 interval = 3.0
-label-connected = 󰈀 
+label-connected = 󰈀 %linkspeed%
 format-disconnected = 
 
 [module/date]
@@ -154,18 +154,18 @@ type = internal/date
 interval = 5
 time = " %H:%M"
 time-alt = " %d/%m/%Y"
-format-prefix = " " 
+format-prefix = %{T7} %{T0}  
 format-prefix-foreground = #B9D7EB
 label = %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume>
-label-muted = "婢 Muted"
+label-muted = "%{T7}婢%{T0} Muted"
 label-muted-foreground = #666
-ramp-volume-0 = "奄"
-ramp-volume-1 = "奔"
-ramp-volume-2 = "墳"
+ramp-volume-0 = %{T7}奄%{T0}
+ramp-volume-1 = %{T7}奔%{T0}
+ramp-volume-2 = %{T7}墳%{T0}
 click-right = pavucontrol
 
 [module/battery]
