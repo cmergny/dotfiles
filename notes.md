@@ -16,3 +16,9 @@ where the guy created the ttf (truetype) equivalent. Useful to use in polhybar f
 
 # Rofi
 Should add rofi to dotfiles
+
+# Git
+git checkout branchname: permet de changer de branch
+git resert HEAD~1 --hard : permet de revenir un commit en arriere
+Pbm de demande de login lors de git push: il fallait changer le .git/config 
+l'adresse https doit etre changé en ssh (voir net).
