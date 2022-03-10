@@ -9,6 +9,7 @@ while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
 # Look a the monitor conenct and launch a bar for each of them
 if type "xrandr" > /dev/null; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+	echo $m
     MONITOR=$m polybar --reload example -c ~/.config/polybar/config &
   done
 else
