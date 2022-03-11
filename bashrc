@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-PS1="\e[93m\h:\e[34m\W\e[0m$ "
+PS1="\[\e[93m\]\h:\[\e[34m\]\W\[\e[0m\]$ "
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
