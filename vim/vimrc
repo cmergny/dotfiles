@@ -1,10 +1,7 @@
 " Understand meaning of letters next to completion menu
 " Prevent pyright to import modules
 " Better snippets and completion
-" Open zathura pdf on the side
-" Mapping to exit terminal
 " Mapping for noh
-
 call plug#begin('~/.vim/plugged')
 	" Theme and airline
 	Plug 'morhetz/gruvbox'
@@ -14,9 +11,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 	"Snippets
-	" Plug 'SirVer/ultisnips'
+	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 	"For using cocvim and snippets
+	"No it's for using tab to maneuver completion
 	" Plug 'ervandew/supertab' 
 	"Fuzzy Files Finder
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -62,6 +60,8 @@ inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 " MAPPING
 " Split windows
 " nmap <c-v> :vsplit <CR> <c-w>l
+" Search 
+nmap <c-s> :%s/
 " Change windows easely
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -108,7 +108,7 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 20
 
 " Coc vim config
-let g:coc_global_extensions = ['coc-snippets', 'coc-json', 'coc-browser', 'coc-css', 'coc-eslint', 'coc-html', 'coc-sh', 'coc-pyright', 'coc-highlight']
+let g:coc_global_extensions = ['coc-json', 'coc-browser', 'coc-css', 'coc-eslint', 'coc-html', 'coc-sh', 'coc-pyright', 'coc-highlight', 'coc-vimtex', 'coc-snippets'] 
 " let g:coc_snippet_next = '<tab>'
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -123,9 +123,11 @@ endfunction
 nmap <silent> gd <Plug>(coc-definition)
 
 " Trigger configuration. 
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<c-w>" "remove mapping conflits with coc vim
+let g:UltiSnipsListSnippets="<c-q>"
+" default mapping
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " VimTex config
 let maplocalleader = " "

@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/cmergny/Git/snowpack/snowpack/snowpackCore'
 let g:netrw_dirhist_2='/home/cmergny/dotfiles'
 let g:netrw_dirhist_1='/home/cmergny/PhD/ice-simulations/heat-transfer'
