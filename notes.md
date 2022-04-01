@@ -45,8 +45,27 @@ To compile a C code called "test.c" run in the same folder "make test" or "gcc t
 Then run the generated file with "./test"
 With snowpack when a .cc file is change I run "make" in the parent dir and then "sudo make install" in same dir.
 
+# C++ pointers
+The operator * is used to deference a pointer.
+Deferencing means getting the value stroed in the  memory location pointed by the pointer.
+example:
+int a = 10;
+int* ptr = &a;
+The unary prefix operator &, when applied to an object, yields the address of the object.
+Modern C++ provides smart pointers for allocating objects, iterators for traversing data structures
+
+# C++ size_t
+Used to define a variable (most often int) of unknown size
+std::size_t is commonly used for array indexing and loop counting. 
+
+# C++ try/throw
+Do code unless exeception given at then end of try{} with "catch".
+
 # Vim
 ultisnips snippets engine
 vim-snippets library of many languages snippets
 use ctrl-j ctrl-k to navigate inside snippet
 coc-vimtex, coc-snippets required
+
+# Run sh output to a file
+./script.sh > file
