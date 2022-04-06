@@ -46,7 +46,11 @@ set incsearch
 set hlsearch
 set nocompatible 
 " set background=dark
-set nowrap
+" wrapping
+set wrap
+set linebreak
+set breakindent
+set formatoptions=l
 set noswapfile
 " set nobackup
 " set nowritebackup
