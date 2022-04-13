@@ -74,3 +74,15 @@ set lbr # linebreak ?
 # Run sh output to a file
 ./script.sh > file
 
+# Unix Shell
+Bash(default), Fish or Zsh
+# Greyed autosuggestion
+Terminal showing greyed text suggestion after writting the start of a command (ex: "ssh" adds in grey "host@truc").
+This is a fish shell feature, not really available in bash.
+https://apple.stackexchange.com/questions/140758/terminal-iterm-autocomplete-greyed-functionality
+
+# Python pdb debugging
+paste "import pdb; pdb.set_trace()" in line to mark a breakpoint. 
+Then run normally with "python file.py". In pdb use c to continue, p to print etc.
+I am using pdb++ which has syntax highlighting and more, see githup repo.
+

@@ -92,6 +92,8 @@ tmap <c-j> <Down>
 " Open vimrc quickly
 nmap <leader>ve :e ~/.vim/vimrc <CR>  
 nmap <leader>vv :b ~/.vim/vimrc <CR>  
+" PDB for python debugging
+nmap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
 "Resize windows
 nmap <M-Right> :vertical resize +1<CR>
 nmap <M-Left> :vertical resize -1<CR>
