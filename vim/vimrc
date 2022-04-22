@@ -1,6 +1,5 @@
 " Understand meaning of letters next to completion menu
 " Prevent pyright to import modules
-" Better snippets and completion
 " Mapping for noh
 call plug#begin('~/.vim/plugged')
 	" Theme and airline
@@ -13,9 +12,6 @@ call plug#begin('~/.vim/plugged')
 	"Snippets
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
-	"For using cocvim and snippets
-	"No it's for using tab to maneuver completion
-	" Plug 'ervandew/supertab' 
 	"Fuzzy Files Finder
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
@@ -43,6 +39,7 @@ set tabstop=4
 set shiftwidth=4
 set autoindent	
 set incsearch
+set colorcolumn=80
 set hlsearch
 set nocompatible 
 " set background=dark
@@ -57,7 +54,7 @@ set noswapfile
 set undofile
 set undodir=~/.vim/undodir
 set laststatus=2
-" setlocal spell
+" spelling 
 set spelllang=nl,en_gb
 inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 
@@ -86,32 +83,25 @@ tmap <leader>tk  <c-\><c-n> :FloatermKill <CR>
 tmap <leader><Esc>  <c-\><c-n> :FloatermToggle <CR>
 tmap <c-h>  <c-\><c-n> :FloatermPrev <CR>
 tmap <c-l>  <c-\><c-n> :FloatermNext <CR>
-tmap <leader>tm <c-\><c-n> 
 tmap <c-k> <Up>
 tmap <c-j> <Down>
+tmap <leader>tm <c-\><c-n> 
 " Open vimrc quickly
 nmap <leader>ve :e ~/.vim/vimrc <CR>  
-nmap <leader>vv :b ~/.vim/vimrc <CR>  
-" PDB for python debugging
-nmap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
+" Breakpoint since python 3.7
+nmap <leader>pdb oimport ipdb; ipdb.set_trace()<Esc>
 "Resize windows
-nmap <M-Right> :vertical resize +1<CR>
-nmap <M-Left> :vertical resize -1<CR>
-nmap <M-Down> :resize +1<CR>
-nmap <M-Up> :resize -1<CR>
+nmap <leader><Left> :vertical resize -2<CR>
+nmap <leader><Right> :vertical resize +2<CR>
+nmap <leader><Down> :resize -1<CR>
+nmap <leader><Up> :resize +1<CR>
 
 " Vim commentary for gdl
 autocmd FileType idlang setlocal commentstring=;\ %s
 
-"Hide tildes on blanck lines
-" highlight EndOfBuffer ctermfg=bg
 " Make vertical separator pretty
 highlight VertSplit cterm=NONE
 set fillchars+=vert:\▏
-
-"Netrw file browser
-let g:netrw_banner = 0
-let g:netrw_winsize = 20
 
 " Coc vim config
 let g:coc_global_extensions = ['coc-json', 'coc-browser', 'coc-css', 'coc-eslint', 'coc-html', 'coc-sh', 'coc-pyright', 'coc-highlight', 'coc-vimtex', 'coc-snippets'] 

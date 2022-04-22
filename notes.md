@@ -23,9 +23,15 @@ git checkout branchname: permet de changer de branch
 git resert HEAD~1 --hard : permet de revenir un commit en arriere
 Pbm de demande de login lors de git push: il fallait changer le .git/config 
 l'adresse https doit etre changé en ssh (voir net).
+# git stable version tag
+You can also tag a version as stable, like "v1.0" or something, exactly like he said 
+Here's the git command to do that: 
+https://git-scm.com/book/en/v2/Git-Basics-Tagging
+It gives you the ability to revert directly to the stable version by checking it out
 
 # Anaconda
 AUR package install with yay on arch
+use /opt/miniconda3/bin/conda init to put conda in path.
 use source /opt/anaconda/bin/activate root to activate 
 
 # Tex
@@ -80,9 +86,24 @@ Bash(default), Fish or Zsh
 Terminal showing greyed text suggestion after writting the start of a command (ex: "ssh" adds in grey "host@truc").
 This is a fish shell feature, not really available in bash.
 https://apple.stackexchange.com/questions/140758/terminal-iterm-autocomplete-greyed-functionality
+# Fish vi keybindings
+You can have normal and insert mode in the shell with  fish_vi_key_bindings
+# Conda autoenv
+added conda activate (envname) to my bashrc
 
+# Alacritty
+Alacritty is a GPU-accelerated terminal emulator.
+
+# Tmux
+ tmux is  a so-called terminal multiplexer. Simply speaking, tmux acts as a window manager within your terminal1 and allows you to create multiple windows and panes within a single terminal window.
+
+### Python
+# iPython
+It is a shell, modified to be used with python.
 # Python pdb debugging
 paste "import pdb; pdb.set_trace()" in line to mark a breakpoint. 
 Then run normally with "python file.py". In pdb use c to continue, p to print etc.
 I am using pdb++ which has syntax highlighting and more, see githup repo.
-
+# Decorators
+It's a way to modify existing function. It's like if you do the function of a function.
+modified_fct = decorator(old_fct)
