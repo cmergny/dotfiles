@@ -97,6 +97,10 @@ Alacritty is a GPU-accelerated terminal emulator.
 # Tmux
  tmux is  a so-called terminal multiplexer. Simply speaking, tmux acts as a window manager within your terminal1 and allows you to create multiple windows and panes within a single terminal window.
  
+# ETHERNET 
+Cable connected but not internet : to solve go to gnome control center. Onglet Network.
+The cable oscilated bw plugged and unplugged. J'ai fait 'oublier cette connection reseau' dans les settings du wired.
+Puis restart network manager "sudo systemctl restart NetworkManager.service" ou juste un reboot et c'est bon.
 # DNS
 The Domain Name System is the hierarchical and decentralized naming system used to identify computers reachable through the Internet or other Internet Protocol networks
 
