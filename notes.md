@@ -1,7 +1,13 @@
 # Xorg
 Installer un driver proprietaire nvidia cause des pbms. Cela réécrit les fichiers confs et peut causer des crashs.
 Mouse and keyboard not detected after startx : pas besoin de changer xorg.conf il fallait installer xf86-input-evdev
-
+## Automatic startx
+put this in fish shell: 
+if status --is-login
+  if test -z "$DISPLAY" -a $XDG_VTNR = 1
+        exec startx -- -keeptty
+			    end
+						end
 # Zathura
 Looking for annotations ?
 
@@ -9,6 +15,9 @@ Looking for annotations ?
 ssh-agent: program to hold private/public keys authentification.
 Need to start the program in the background with command 
 	eval "ssh-agent"
+## Xforwarding (graphical interface)
+Need to change some options in /etc/ssh/sshd_config, see:
+https://wiki.archlinux.org/title/OpenSSH#Step_2_(Variant_B):_set_up_a_local_TUN_interface
 
 # Fonts
 I liked the X11 misc font 6x13 but was a bitmap font.
@@ -19,11 +28,20 @@ where the guy created the ttf (truetype) equivalent. Useful to use in polhybar f
 Should add rofi to dotfiles
 
 # Git
+## Change branch
 git checkout branchname: permet de changer de branch
 git resert HEAD~1 --hard : permet de revenir un commit en arriere
+## Login to push
 Pbm de demande de login lors de git push: il fallait changer le .git/config 
 l'adresse https doit etre changé en ssh (voir net).
-# git stable version tag
+## Go to previous commit
+see : https://stackoverflow.com/questions/4114095/how-do-i-revert-a-git-repository-to-a-previous-commit
+git checkout 0d1d7fc32
+if you want to create new branch
+git checkout -b old-state 0d1d7fc32
+## Git stable version tag
+git tag: list all tags
+to create a tag do git tag -a v1.0 -m "my version1.0"
 You can also tag a version as stable, like "v1.0" or something, exactly like he said 
 Here's the git command to do that: 
 https://git-scm.com/book/en/v2/Git-Basics-Tagging
@@ -86,8 +104,16 @@ Bash(default), Fish or Zsh
 Terminal showing greyed text suggestion after writting the start of a command (ex: "ssh" adds in grey "host@truc").
 This is a fish shell feature, not really available in bash.
 https://apple.stackexchange.com/questions/140758/terminal-iterm-autocomplete-greyed-functionality
+# fish config
+Make sure defaut browser is set when running the command. 
+Make sure python env is fully deactivated or activated because the command uses python packages.
+# Prompt 
+I use Terlar.
 # Fish vi keybindings
 You can have normal and insert mode in the shell with  fish_vi_key_bindings
+go back to default with fish_default_key_bindings
+To have my current vim mode displayed in prompt. Either modify file in  /usr/share/fish/functions/fish_default_mode_prompt.fish
+Or run fish_config got to functions and find fish_default_mode_prompt
 # Conda autoenv
 added conda activate (envname) to my bashrc
 

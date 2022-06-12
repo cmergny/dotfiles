@@ -19,6 +19,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'voldikss/vim-floaterm'
 	"Auto close brackets
 	Plug 'Raimondi/delimitMate'
+	"For surroundings
+	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-repeat'
 	"To comment blocks
 	Plug 'tpope/vim-commentary'
 	"LateX completion
@@ -39,7 +42,7 @@ set tabstop=4
 set shiftwidth=4
 set autoindent	
 set incsearch
-set colorcolumn=80
+set colorcolumn=
 set hlsearch
 set nocompatible 
 " set background=dark
@@ -75,17 +78,23 @@ vnoremap > >gv
 nmap <leader>ff :Files <CR>
 nmap <leader>fh :Files ~<CR>
 nmap <leader>fb :Buffers <CR>
-" Floaterm  config
-nmap <leader>tn :w <CR> :FloatermNew <CR>
-nmap <leader>tt :w <CR> :FloatermToggle <CR>
-tmap <leader>tn <c-\><c-n>:FloatermNew <CR>
+"" Floaterm  config
+nmap <leader>tn  <CR> :FloatermNew --height=0.9 <CR>
+nmap <leader>tt :w<CR> :FloatermToggle <CR>
+tmap <leader>tv  <c-\><c-n> :FloatermUpdate --width=0.5 --wintype=vsplit <CR>
+tmap <leader>tn <c-\><c-n>:FloatermNew --height=0.9<CR>
 tmap <leader>tk  <c-\><c-n> :FloatermKill <CR>
 tmap <leader><Esc>  <c-\><c-n> :FloatermToggle <CR>
-tmap <c-h>  <c-\><c-n> :FloatermPrev <CR>
-tmap <c-l>  <c-\><c-n> :FloatermNext <CR>
+"Swith bw windows
+tmap <c-j>  <c-\><c-n> <c-w>j
+tmap <c-h>  <c-\><c-n> <c-w>h
+"k and j to search command history
 tmap <c-k> <Up>
 tmap <c-j> <Down>
-tmap <leader>tm <c-\><c-n> 
+" Scroll on term
+tmap <c-u> <c-\><c-n><c-u>
+" tmap <c-Left>  <c-\><c-n> :FloatermPrev <CR>
+" tmap <c-Right>  <c-\><c-n> :FloatermNext <CR>
 " Open vimrc quickly
 nmap <leader>ve :e ~/.vim/vimrc <CR>  
 " Breakpoint since python 3.7
