@@ -9,7 +9,7 @@ class Linker:
         self.home = home
         self.folders = folders
         self.oldpath = f"{self.home}/.oldotfiles"
-        self.dotpath = f"{self.home}/.dotfiles"
+        self.dotpath = f"{self.home}/dotfiles"
         self.confpath = f"{self.home}/.config"
         self.already = []
         self.symbol = "  >"
@@ -30,14 +30,16 @@ class Linker:
     def print_msg(self):
         msg = ""
         for word in self.already:
-            msg += word + ","
+            msg += word + " "
         msg = msg[:-1]
         print(f"{self.symbol} The following symlinks already existed :")
         print(f"\t {msg}")
+        print("Done \033[32m✓\033[0m")
         
     def create_dir(self, path):
         try:
             os.mkdir(path)
+            print(f"{self.symbol} Created backup folder at {path}") 
         except OSError:
             print(f"{self.symbol} Backup folder is at {path}") 
 
@@ -46,14 +48,15 @@ class Linker:
         out = subprocess.run(cmd)
         return(out)
 
-    def mv_oldconf(self, confpath):
+    def mv_oldconf(self, dst):
         """backup previous conf by moving it elsewhere."""
-        exist = os.path.isdir(confpath)
+        exist = os.path.isdir(dst)
         if exist:
-            print(confpath)
-            cmd = f"mv -f {confpath} {self.oldpath}"
+            cmd = f"rsync -a {dst} {self.oldpath}"
             subprocess.run(cmd, shell=True)
-            print(f"{self.symbol} Moved {self.folder} to {self.oldpath}.")
+            cmd = f"rm -rf {dst}"
+            subprocess.run(cmd, shell=True)
+            print(f"{self.symbol} Moved prev {self.folder} conf to backup folder.")
 
     def create_symlink(self, src, dst):
         """Make a symlink if there is not one already."""
@@ -64,8 +67,8 @@ class Linker:
         # Make symlink
         else:
             self.mv_oldconf(dst)
-            self.run_cmd(f"ln -s {dst} {src}")
-            print(f"{self.symbol} Created symlink {src} -> {dst}")
+            os.system(f"ln -s {src} {self.confpath}")
+            print(f"\033[33m{self.symbol} Created symlink {self.folder} -> {src}\033[0m")
 
 ### MAIN
 
