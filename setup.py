@@ -1,3 +1,11 @@
+"""
+Setup script to create all the symlink necessary for the config files.
+Author: C. Mergny
+Date: June 2022
+"""
+
+### IMPORTS
+
 import os
 import subprocess
 
