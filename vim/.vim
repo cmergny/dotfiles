@@ -1,1 +1,0 @@
-/home/cmergny/dotfiles/vim/

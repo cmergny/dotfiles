@@ -12,6 +12,7 @@ class Linker:
         self.dotpath = f"{self.home}/dotfiles"
         self.confpath = f"{self.home}/.config"
         self.already = []
+        self.count = 0
         self.symbol = "  >"
 
     def make_links(self):
@@ -25,18 +26,33 @@ class Linker:
             src = f"{self.dotpath}/config/{folder}"
             dst = f"{self.confpath}/{folder}"
             self.create_symlink(src, dst)
+        # Vim
+        self.folder = "vim"
+        src = f"{self.dotpath}/{self.folder}"
+        dst = f"{self.home}/.{self.folder}"
+        self.create_symlink(src, dst)
+        # Bashrc
+        self.folder = "bashrc"
+        src = f"{self.dotpath}/{self.folder}"
+        dst = f"{self.home}/.{self.folder}"
+        self.create_symlink(src, dst)
+        # Print msg
         self.print_msg()
 
     def print_msg(self):
+        """Just for log msgs in the end of the script."""
         msg = ""
         for word in self.already:
             msg += word + " "
         msg = msg[:-1]
         print(f"{self.symbol} The following symlinks already existed :")
         print(f"\t {msg}")
+        if self.count == 0:
+            print("\033[32mNothing needed to be changed.\033[0m")
         print("Done \033[32m✓\033[0m")
         
     def create_dir(self, path):
+        """Make a backup dir if it doesnt already exist."""
         try:
             os.mkdir(path)
             print(f"{self.symbol} Created backup folder at {path}") 
@@ -44,12 +60,13 @@ class Linker:
             print(f"{self.symbol} Backup folder is at {path}") 
 
     def run_cmd(self, cmd):
+        """Convert cmd string to list of words and call subprocess."""
         cmd = cmd.split(" ")
         out = subprocess.run(cmd)
         return(out)
 
     def mv_oldconf(self, dst):
-        """backup previous conf by moving it elsewhere."""
+        """Backup previous conf by moving it elsewhere."""
         exist = os.path.isdir(dst)
         if exist:
             cmd = f"rsync -a {dst} {self.oldpath}"
@@ -66,9 +83,14 @@ class Linker:
             self.already.append(self.folder)
         # Make symlink
         else:
+            self.count += 1
             self.mv_oldconf(dst)
-            os.system(f"ln -s {src} {self.confpath}")
-            print(f"\033[33m{self.symbol} Created symlink {self.folder} -> {src}\033[0m")
+            destination = self.confpath
+            if self.folder in ["vim", "bashrc"]:
+                destination = dst
+            out = os.system(f"ln -s {src} {destination}")
+            if out == 0:
+                print(f"\033[33m{self.symbol} Created symlink {destination} -> {src}\033[0m")
 
 ### MAIN
 
