@@ -9,7 +9,18 @@ if status --is-login
 			    end
 						end
 # Zathura
-Looking for annotations ?
+Looking for annotations ? -> Zathura is not made for that
+
+# Arch Linux Install
+## AUDIO not working for dell xps
+The ONLY solution that work was found at: https://bbs.archlinux.org/viewtopic.php?id=186597
+you need to create a new file with sudo vim /etc/modprobe.d/50-alsa.conf 
+and exactly this name! Inside the file write these two lines bw the quotes:
+"
+options snd_hda_intel enable=1 index=0
+options snd_hda_intel index=1
+"
+Note that all other solutions found on the net were tested and did not work.
 
 # SSH
 ssh-agent: program to hold private/public keys authentification.
