@@ -48,6 +48,13 @@ I liked the X11 misc font 6x13 but was a bitmap font.
 So I found a repo on git: https://github.com/dse/xorg-monospace-fonts-ttf/tree/master/ttf/misc-fixed
 where the guy created the ttf (truetype) equivalent. Useful to use in polhybar for exemple.
 
+# Dotfiles
+# Managing slightly diff dots
+In case you need dotfiles for diff hosts you'll probably want to slightly change some settings.
+For exemple, the font size on Alacritty.
+It's a problem bc with git it means you'd have to create a diff branch each team.
+To solve this there exist smth called templating that enables to have a single config file but with blocks proper to each hosts.
+For more, see arch wiki on dotfiles and  https://github.com/deadc0de6/dotdrop
 # Rofi
 Should add rofi to dotfiles
 
