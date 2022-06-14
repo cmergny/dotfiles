@@ -1,4 +1,16 @@
 # Xorg
+# Which config file uses startx
+There are two paths but the one startx actually uses is ~/.xinitrc
+# Nvidia driver install
+Works well for new drivers (dell xps 17 uses version NV167).
+just install the drivers: sudo pacman -S nvidia nvidia-utils nvidia-settings
+reboot
+then install optimus manager poru hybrid GPU intel/nvidia
+yay -S optimus-manager
+reboot
+Change ~/.xinitrc as shown in https://dev.to/snikhill/optimus-manager-on-arch-linux-1589
+specify startup mode in /etc/optimus-manager/optimus-manager.conf
+# Driver pour archgeops
 Installer un driver proprietaire nvidia cause des pbms. Cela réécrit les fichiers confs et peut causer des crashs.
 Mouse and keyboard not detected after startx : pas besoin de changer xorg.conf il fallait installer xf86-input-evdev
 ## Automatic startx
@@ -8,6 +20,7 @@ if status --is-login
         exec startx -- -keeptty
 			    end
 						end
+
 # Zathura
 Looking for annotations ? -> Zathura is not made for that
 
@@ -151,3 +164,16 @@ I am using pdb++ which has syntax highlighting and more, see githup repo.
 # Decorators
 It's a way to modify existing function. It's like if you do the function of a function.
 modified_fct = decorator(old_fct)
+
+# Pacman repo
+sudo nano /etc/pacman.conf
+to include other repos uncomment the line AND the header.
+
+# Steam
+install from multilib repo pacman
+if font is not displayed:
+Try installing lib32-fontconfig, ttf-liberation
+## Proton
+Proton is by default in steam just need to activate it in settings, steam play.
+Rivals:
+PROTON_USE_WINED3D11=1 %command%
