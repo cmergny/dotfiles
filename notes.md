@@ -177,3 +177,7 @@ Try installing lib32-fontconfig, ttf-liberation
 Proton is by default in steam just need to activate it in settings, steam play.
 Rivals:
 PROTON_USE_WINED3D11=1 %command%
+
+# Network
+use nmcli for connecting to wifi.
+if in the tty use iwctl

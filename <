@@ -2,10 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-if [ (prompt_hostname) = "archgeops" ]
+if [ "archgeops" ]
+	echo "yo"
 	set conda_path /opt/miniconda3/bin/conda
-else
-	set conda_path /opt/anaconda/bin/conda
 end
 
 # >>> conda initialize >>>
