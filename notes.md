@@ -188,3 +188,23 @@ PROTON_USE_WINED3D11=1 %command%
 # Network
 use nmcli for connecting to wifi.
 if in the tty use iwctl
+
+# Xrandr
+Use autorandr for automatic screen detection. Should work out of the box.
+
+# Print paper on arch linux
+You need to install cups then enable
+sudo systemctl enable cups.service 
+and start it
+sudo systemctl start cups.service 
+then you need to install the driver for your printer: see for exemple https://aur.archlinux.org/packages/brother-dcp1510
+and go to the webUI of cups at  http://localhost:631/admin and add the printer here.
+Then it should be good.
+
+# DUNST
+Just copy pasting the content of a file at :
+https://github.com/Godkayaki/dotfiles/blob/main/.config/dunst/dunstrc-mech
+into my dunstrc
+
+# ROFI
+used a custom theme from git

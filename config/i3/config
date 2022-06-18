@@ -3,14 +3,10 @@
 # Set mod key (Mod4 = Super)
 set $mod Mod4
 
-# Multi-monitor
-# exec_always xrandr --output eDP-1 --primary --mode 1920x1200 --pos 1920x0 --rotate normal --output DP-1 --mode 1920x1080 --pos 0x0 --rotate normal 
-exec_always --no-startup-id "xrandr --output 'DP-4' --right-of DVI-I-1"
-# exec_always --no-startup-id "autorandr --load archgeops" 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh 
 # Compositor
-exec_always --no-startup-id  "pkill -9 compton ; compton"
+exec_always --no-startup-id  "pkill -9 picom ; picom"
 exec_always --no-startup-id  "pkill -9 dunst" 
 # Wallpaper
 exec_always --no-startup-id feh --bg-fill ~/Pictures/mountains_wp.jpg
@@ -19,7 +15,7 @@ exec_always setxkbmap fr
 exec setxkbmap -option caps:none
 exec_always xmodmap -e "keycode 66 = Return"
 # Start rofi
-bindsym $mod+d exec "rofi -show drun"
+bindsym $mod+d exec "rofi -show drun -theme applications -show-icons"
 # Ssh agent
 exec_always --no-startup-id  'eval "$(ssh-agent)" ; ssh-add ~/.ssh/gitlab_rsa'
 
@@ -231,8 +227,9 @@ gaps top 80 # for polybar
 assign [class="Firefox"] $ws3
 assign [class="firefox"] $ws3
 assign [class="Thunderbird"] $ws4
-assign [class="discord"] $ws9
 assign [class="Org.gnome.Nautilus"] $ws5
+assign [class="spotify"] $ws7
+assign [class="Spotify"] $ws7
 assign [class="Steam"] $ws8
 assign [class="steam"] $ws8
 assign [class="battle.net.exe"] $ws8
@@ -240,6 +237,7 @@ assign [class="Lutris"] $ws8
 assign [class="Fightcade"] $ws8
 assign [class="hearthstone.exe"] $ws8
 assign [class="steam_app_383980"] $ws8
+assign [class="discord"] $ws9
 
 # Rules for floating
 for_window [class="matplotlib"] floating enable
