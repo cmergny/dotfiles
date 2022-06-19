@@ -10,7 +10,7 @@ end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-eval $conda_path "shell.fish" "hook" $argv | source
+# eval $conda_path "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
 # Start X at login

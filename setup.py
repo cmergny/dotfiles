@@ -105,8 +105,8 @@ class Linker:
 if __name__ == "__main__":
 
     home = "/home/cmergny"
-    folders = ["alacritty", "compton", "dunst", "i3",
-        "polybar", "zathura", "fish", "rofi", "picom"]
+    folders = ["alacritty", "dunst", "i3",
+        "polybar", "zathura", "fish", "rofi", "picom", "autorandr"]
 
     linker = Linker(home, folders)
     linker.make_links()

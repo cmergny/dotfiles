@@ -56,7 +56,8 @@ It's a problem bc with git it means you'd have to create a diff branch each team
 To solve this there exist smth called templating that enables to have a single config file but with blocks proper to each hosts.
 For more, see arch wiki on dotfiles and  https://github.com/deadc0de6/dotdrop
 # Rofi
-Should add rofi to dotfiles
+used a custom theme from git
+https://github.com/nautilor/rofi-themes
 
 # Git
 ## Change branch
@@ -191,6 +192,9 @@ if in the tty use iwctl
 
 # Xrandr
 Use autorandr for automatic screen detection. Should work out of the box.
+Issue: at start does not work, maybe because I switched to gpu nvidia mode with optimus?
+Solve: it seems to be an issue with nvidia driver (maybe sol is to save a profile for nvidia also?)
+Works when using hybrid but still not at good scale.
 
 # Print paper on arch linux
 You need to install cups then enable
@@ -206,5 +210,15 @@ Just copy pasting the content of a file at :
 https://github.com/Godkayaki/dotfiles/blob/main/.config/dunst/dunstrc-mech
 into my dunstrc
 
-# ROFI
-used a custom theme from git
+#i3
+some exec command did not seem to work.
+No startup id should not be the reason why a cmd does not work.
+It my case I tried to use absolute path and removing the quotes in the command made it work.
+
+# Display manager SSDM
+see https://www.reddit.com/r/unixporn/comments/sl53ao/oc_login_theme_in_the_style_of_my_rofi_theme/
+found theme at https://framagit.org/MarianArlt/sddm-sugar-candy
+to have it at boot do:
+systemctl enable sddm.service 
+test mode working but when doing it at boot makes black screen. Have to alt-ctrl-f2 to escape this bs.
+
