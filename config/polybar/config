@@ -46,7 +46,7 @@ font-7 = Material Design Icons:style=Bold:size=14;1
 ; modules layout
 modules-left = i3
 modules-center = date
-modules-right =  pulseaudio light  battery temperature redshift wlan eth power
+modules-right =  pulseaudio  battery temperature redshift wlan eth power
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff

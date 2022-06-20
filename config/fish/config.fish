@@ -4,14 +4,15 @@ end
 
 if [ (prompt_hostname) = "archgeops" ]
 	set conda_path /opt/miniconda3/bin/conda
+
+	# >>> conda initialize >>>
+	# !! Contents within this block are managed by 'conda init' !!
+	eval $conda_path "shell.fish" "hook" $argv | source
+	# <<< conda initialize <<<
+
 else
 	set conda_path /opt/anaconda/bin/conda
 end
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# eval $conda_path "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
 
 # Start X at login
 if status --is-login
