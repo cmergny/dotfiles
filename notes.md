@@ -222,3 +222,8 @@ to have it at boot do:
 systemctl enable sddm.service 
 test mode working but when doing it at boot makes black screen. Have to alt-ctrl-f2 to escape this bs.
 
+# Cli visualizers
+CAVA does not work, recidia bof.
+Cli-visualizer works but not with aur package. Need to build from their github with the option to enable pulse as in their readme. 
+see: https://github.com/dpayne/cli-visualizer
+to have only the top bar make stereo to false. To have a single color create a file in config/vis/colors (ex named blue) write "blue" in its first line. then add the file path to vis config.
