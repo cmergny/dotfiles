@@ -222,3 +222,11 @@ to have it at boot do:
 systemctl enable sddm.service 
 test mode working but when doing it at boot makes black screen. Have to alt-ctrl-f2 to escape this bs.
 
+# Bluetooth 
+compliqué. Install bluez and bluez utils.
+Make sure btusb is loaded. (output in lsmod with grep)
+if not load it with modprobe btusb
+then enable and start bluetooth.service
+check status if want.
+!Note: Gnome control center does not seem to work with current version of bluez.
+Instead I have installed blueberry package.
