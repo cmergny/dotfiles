@@ -230,3 +230,9 @@ then enable and start bluetooth.service
 check status if want.
 !Note: Gnome control center does not seem to work with current version of bluez.
 Instead I have installed blueberry package.
+=======
+# Cli visualizers
+CAVA does not work, recidia bof.
+Cli-visualizer works but not with aur package. Need to build from their github with the option to enable pulse as in their readme. 
+see: https://github.com/dpayne/cli-visualizer
+to have only the top bar make stereo to false. To have a single color create a file in config/vis/colors (ex named blue) write "blue" in its first line. then add the file path to vis config.

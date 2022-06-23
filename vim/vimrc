@@ -79,7 +79,7 @@ nmap <leader>ff :Files <CR>
 nmap <leader>fh :Files ~<CR>
 nmap <leader>fb :Buffers <CR>
 "" Floaterm  config
-nmap <leader>tn  <CR> :FloatermNew --height=0.9 <CR>
+nmap <leader>tn  <CR> :FloatermNew --height=0.99 --width=0.6 <CR>
 nmap <leader>tt :w<CR> :FloatermToggle <CR>
 tmap <leader>tv  <c-\><c-n> :FloatermUpdate --width=0.5 --wintype=vsplit <CR>
 tmap <leader>tn <c-\><c-n>:FloatermNew --height=0.9<CR>

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/cmergny/PhD/ice-simulations'
 let g:netrw_dirhist_4='/etc/sddm.conf.d'
 let g:netrw_dirhist_3='/home/cmergny/.config'
 let g:netrw_dirhist_2='/home/cmergny/dotfiles/config/picom'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/home/cmergny/dotfiles/config/fish'
 let g:netrw_dirhist_8='/etc/pulse'
 let g:netrw_dirhist_7='/etc/modprobe.d'
 let g:netrw_dirhist_6='/home/cmergny/dotfiles/config/i3'
-let g:netrw_dirhist_5='/home/cmergny/.config'
