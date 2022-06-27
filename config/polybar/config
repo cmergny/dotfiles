@@ -129,11 +129,11 @@ ramp-signal-3 = 󰤨
 
 [module/eth]
 type = internal/network
-interface = enp58s0u2u3
+interface = enp58s0u1u3
 interval = 1.0
 speed-unit = ''
 label-connected = 󰈀 %linkspeed%
-format-disconnected = 󰈀 
+format-disconnected =%{F#666}󰈀%{F-}  
 format-disconnected-foreground = #666
 
 [module/date]
@@ -176,7 +176,7 @@ ramp-capacity-0 = %{F#e06666}%{T7}
 ramp-capacity-1 = %{F#e06666}%{T7}%{F-}
 ramp-capacity-2 = %{F#f6b26b}%{T7}%{F-}
 ramp-capacity-3 = %{F#f6b26b}%{T7}%{F-}
-ramp-capacity-4 = %{F#f6b26b}%{T7}%{F-}
+ramp-capacity-4 = %{T7}
 ramp-capacity-5 = %{T7}
 ramp-capacity-6 = %{T7}
 ramp-capacity-7 = %{T7}

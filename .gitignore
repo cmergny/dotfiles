@@ -1,2 +1,4 @@
 vim/undodir/*
 vim/plugged/*
+config/polybar/scripts/env.sh
+config/autorandr/*

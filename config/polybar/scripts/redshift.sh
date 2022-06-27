@@ -10,7 +10,7 @@ changeMode() {
 }
 
 changeTemp() {
-  if [ "$2" -gt 1000 ] && [ "$2" -lt 25000 ]
+  if [ "$2" -gt 999 ] && [ "$2" -lt 6501 ]
   then
     sed -i "s/REDSHIFT_TEMP=$1/REDSHIFT_TEMP=$2/g" $envFile 
     redshift -P -O $((REDSHIFT_TEMP+changeValue))
@@ -38,7 +38,7 @@ case $1 in
     case $REDSHIFT in
       on)
 		 # color=660
-		 temperature=$(($REDSHIFT_TEMP*100/6500))
+		 temperature=$((100*($REDSHIFT_TEMP-1000)/5500))
          echo "%{F#e69138}󰈈 $temperature%"
         ;;
       off)

@@ -236,3 +236,10 @@ CAVA does not work, recidia bof.
 Cli-visualizer works but not with aur package. Need to build from their github with the option to enable pulse as in their readme. 
 see: https://github.com/dpayne/cli-visualizer
 to have only the top bar make stereo to false. To have a single color create a file in config/vis/colors (ex named blue) write "blue" in its first line. then add the file path to vis config.
+
+# Hearthstone
+Battle net works but Hearthstone showed a direct x error.
+Using lutris: they are instruction given on the install scripts of Hearthstone with links to github pages.
+After installing the dependencies.
+I've followed all the options a hundred times from the wiki but didn't work out of a the box.
+[Solved] the solution was to (in Lutris) go to wine settings, then the tab system options, and the parameter Vulkan ICD loader was set to Intel ! Change it to nvidia proprietary and it works!
