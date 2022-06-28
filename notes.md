@@ -243,3 +243,9 @@ Using lutris: they are instruction given on the install scripts of Hearthstone w
 After installing the dependencies.
 I've followed all the options a hundred times from the wiki but didn't work out of a the box.
 [Solved] the solution was to (in Lutris) go to wine settings, then the tab system options, and the parameter Vulkan ICD loader was set to Intel ! Change it to nvidia proprietary and it works!
+
+# Conky 
+To have it on the background in conf conky put:
+own_window yes
+own_window_class Conky
+own_window_type override
