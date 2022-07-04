@@ -45,6 +45,7 @@ set incsearch
 set colorcolumn=
 set hlsearch
 set nocompatible 
+set mouse=a
 " set background=dark
 " wrapping
 set wrap
